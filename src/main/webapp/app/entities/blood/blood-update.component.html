@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-blood-heading" jhiTranslate="twentyOnePointsApp.blood.home.createOrEditLabel">Create or edit a Blood</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!blood.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="blood.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="twentyOnePointsApp.blood.date" for="field_date">Date</label>
+                    <div class="input-group">
+                        <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker  #dateDp="ngbDatepicker" [(ngModel)]="blood.date"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.date?.dirty && editForm.controls.date?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.date?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="twentyOnePointsApp.blood.systolic" for="field_systolic">Systolic</label>
+                    <input type="number" class="form-control" name="systolic" id="field_systolic"
+                        [(ngModel)]="blood.systolic" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="twentyOnePointsApp.blood.diastolic" for="field_diastolic">Diastolic</label>
+                    <input type="number" class="form-control" name="diastolic" id="field_diastolic"
+                        [(ngModel)]="blood.diastolic" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="twentyOnePointsApp.blood.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="blood.user" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === blood.user?.id ? blood.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

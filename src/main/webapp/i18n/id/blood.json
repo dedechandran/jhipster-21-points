@@ -1,0 +1,25 @@
+{
+    "twentyOnePointsApp": {
+        "blood": {
+            "home": {
+                "title": "Blood",
+                "createLabel": "Buat Blood baru",
+                "createOrEditLabel": "Buat atau edit Blood",
+                "search": "Cari Blood"
+            },
+            "created": "Blood dengan id {{ param }} telah dibuat",
+            "updated": "Blood dengan id {{ param }} telah diperbaharui",
+            "deleted": "Blood dengan id {{ param }} telah dihapus",
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Blood {{ id }}?"
+            },
+            "detail": {
+                "title": "Blood"
+            },
+            "date": "Date",
+            "systolic": "Systolic",
+            "diastolic": "Diastolic",
+            "user": "User"
+        }
+    }
+}
