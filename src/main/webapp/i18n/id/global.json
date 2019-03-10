@@ -4,6 +4,7 @@
         "browsehappy": "Anda menggunakan peramban versi lama. Silakan <a href=\"http://browsehappy.com/?locale=en\">perbaharui peramban anda</a> untuk meningkatkan kenyamanan anda.",
         "menu": {
             "home": "Beranda",
+            "hi-there": "Hi There",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entitas",

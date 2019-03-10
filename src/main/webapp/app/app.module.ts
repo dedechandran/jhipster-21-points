@@ -18,6 +18,7 @@ import { TwentyOnePointsHomeModule } from './home/home.module';
 import { TwentyOnePointsAccountModule } from './account/account.module';
 import { TwentyOnePointsEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
+import { TwentyOnePointsAppHiThereModule } from './hi-there/hi-there.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
 
@@ -36,6 +37,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         TwentyOnePointsCoreModule,
         TwentyOnePointsHomeModule,
         TwentyOnePointsAccountModule,
+        TwentyOnePointsAppHiThereModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         TwentyOnePointsEntityModule,
         TwentyOnePointsAppRoutingModule
